@@ -42,3 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: PlayerUI
+    uniqueID: 1980321151
+    locked: 0
+  - name: MenuUi
+    uniqueID: 1891415439
+    locked: 0
