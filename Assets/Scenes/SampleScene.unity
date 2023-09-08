@@ -276,12 +276,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 27ef95fd5d8f2754889c0f6e0637e27b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cba1b5fd6bf3b54baa31ac6c3d7c73f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 6ab5e446beb96a44cbb2d97c95372bee, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 7f91542218a128f4e99c0a108db3770a, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1257999451}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9fe0604efa9f244790a0a50812150e0, type: 3}
+  m_Script: {fileID: 11500000, guid: fcea0857dec48f04e8cbdffae96788ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!50 &1257999456
@@ -431,7 +431,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6dd232c997b62274f94a409ae34ca0b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06bda1c3a96d2e7418beb6165478e0de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -493,6 +493,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1395877850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 857c52e4516553844af28edd492f809c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d8b3ec6d41ddaf48be257a7e1e3455b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
