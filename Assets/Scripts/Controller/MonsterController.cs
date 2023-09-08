@@ -7,11 +7,14 @@ public class MonsterController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _renderer;
     private Vector2 _movementDirection = Vector2.zero;
+    private ICharacter monster;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _renderer = GetComponent<SpriteRenderer>();
+
+        monster = new Monster(2, 1, 3, 1, 1);
     }
 
     void Update()
@@ -40,5 +43,10 @@ public class MonsterController : MonoBehaviour
     {
         if (direction.x != 0)
             _renderer.flipX = direction.x < 0;
+    }
+
+    public int GetAttack()
+    {
+        return monster.Attack;
     }
 }
