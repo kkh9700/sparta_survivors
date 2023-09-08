@@ -16,12 +16,12 @@ public class MonsterController : MonoBehaviour
 
     void Update()
     {
-        SetVector2();
+        SetDirection();
         ApplyMovment(_movementDirection);
         Rotate(_movementDirection);
     }
 
-    private void SetVector2()
+    private void SetDirection()
     {
         GameObject player = GameObject.FindWithTag("Player");
         float x = player.transform.position.x - transform.position.x;
