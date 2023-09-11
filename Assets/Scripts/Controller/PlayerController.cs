@@ -34,23 +34,23 @@ public class PlayerController : MonoBehaviour
     {
         if (isBulletTime)
         {
-            BTGauge -= Time.deltaTime * BTScale;
+            BTGauge -= Time.unscaledDeltaTime;
             if (BTGauge < 0)
                 OffBulletTime();
         }
         else
         {
-            BTGauge += Time.deltaTime * .5f;
+            BTGauge += Time.unscaledDeltaTime * .5f;
             if (BTGauge > 5)
                 BTGauge = 5;
         }
 
-        DashCoolTime += Time.deltaTime / Time.timeScale;
+        DashCoolTime += Time.unscaledDeltaTime;
 
         if (DashCoolTime > 2)
             DashCoolTime = 2;
 
-        DamagedDelay -= Time.deltaTime;
+        DamagedDelay -= Time.unscaledDeltaTime;
 
         if (DamagedDelay < 0)
             DamagedDelay = 0;
@@ -133,11 +133,14 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (DamagedDelay <= 0 && collision.gameObject.tag == "Monster")
+        if (DamagedDelay <= 0)
         {
-            DamagedDelay = .5f;
-            player.Damaged(collision.transform.GetComponent<MonsterController>().GetAttack());
-            HPImg.fillAmount = player.HP / (float)maxHP;
+            if (collision.gameObject.tag == "Monster")
+            {
+                DamagedDelay = .5f;
+                player.Damaged(collision.transform.GetComponent<MonsterController>().GetAttack());
+                HPImg.fillAmount = player.HP / (float)maxHP;
+            }
         }
     }
 }
