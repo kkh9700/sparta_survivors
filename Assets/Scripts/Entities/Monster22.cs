@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Monster22 : MonoBehaviour
 {
-    public float curTime = 0; // GameManager.cs
-    public int monsterAtk = 0; // MonsterInterface.Atk 
+    public float curTime = 0; 
+    public int monsterAtk = 0; 
 
     void Start()
     {
