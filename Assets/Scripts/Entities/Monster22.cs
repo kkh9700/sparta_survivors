@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Monster : MonoBehaviour
+public class Monster22 : MonoBehaviour
 {
     public float curTime = 0; // GameManager.cs
     public int monsterAtk = 0; // MonsterInterface.Atk 
