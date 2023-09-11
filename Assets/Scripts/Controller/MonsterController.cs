@@ -69,7 +69,6 @@ public class MonsterController : MonoBehaviour
         {
 			monster.Attack += 1;
             stageUp = true;
-		}
-        
+		}     
 	}
 }
