@@ -7,7 +7,6 @@ public class MonsterController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _renderer;
     private Vector2 _movementDirection = Vector2.zero;
-
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
