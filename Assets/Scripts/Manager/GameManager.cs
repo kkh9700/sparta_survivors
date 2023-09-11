@@ -6,11 +6,9 @@ using static UnityEngine.GraphicsBuffer;
 public class GameManager : MonoBehaviour
 {
     public GameObject monster;
-    Monster monster1 = new Monster(10, 5, 1, 1, 1);
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {      
 		SpawnMonster();
 	}
 

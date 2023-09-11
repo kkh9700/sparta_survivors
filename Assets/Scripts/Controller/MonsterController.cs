@@ -17,7 +17,11 @@ public class MonsterController : MonoBehaviour
         monster = new Monster(2, 1, 3, 1, 1);
     }
 
-    void Update()
+	 void Start()
+	{
+        SetMonsterLocation();
+	}
+	void Update()
     {
         SetDirection();
         ApplyMovment(_movementDirection);
@@ -49,4 +53,11 @@ public class MonsterController : MonoBehaviour
     {
         return monster.Attack;
     }
+
+	public void SetMonsterLocation()
+	{
+		float x = Random.Range(-8.3f, 8.3f);
+		float y = 4.4f;
+		transform.position = new Vector3(x, y, 0);
+	}
 }

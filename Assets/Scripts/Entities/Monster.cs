@@ -31,12 +31,4 @@ public class Monster : ICharacter
             isDead = true;
         }
     }
-
-	public void SetMonsterLocation(GameObject target)
-	{
-		float x = Random.Range(-8.3f, 8.3f);
-		float y = 4.4f;
-		target.transform.position = new Vector3(x, y, 0);
-	}
-
 }
