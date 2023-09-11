@@ -20,7 +20,6 @@ public class Monster : ICharacter
         Exp = exp;
         isDead = false;
     }
-
     public void Damaged(int damage)
     {
         HP -= damage;

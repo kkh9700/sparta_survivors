@@ -8,12 +8,12 @@ public class MonsterController : MonoBehaviour
     private SpriteRenderer _renderer;
     private Vector2 _movementDirection = Vector2.zero;
     private ICharacter monster;
-
+    private float curTime = 0;
+    private bool stageUp = false;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _renderer = GetComponent<SpriteRenderer>();
-
         monster = new Monster(2, 1, 3, 1, 1);
     }
 
@@ -23,7 +23,9 @@ public class MonsterController : MonoBehaviour
 	}
 	void Update()
     {
-        SetDirection();
+		curTime += Time.deltaTime;
+        MonsterAtkUp();
+		SetDirection();
         ApplyMovment(_movementDirection);
         Rotate(_movementDirection);
     }
@@ -59,5 +61,15 @@ public class MonsterController : MonoBehaviour
 		float x = Random.Range(-8.3f, 8.3f);
 		float y = 4.4f;
 		transform.position = new Vector3(x, y, 0);
+	}
+
+	void MonsterAtkUp()
+	{
+        if (curTime > 30f && !stageUp)
+        {
+			monster.Attack += 1;
+            stageUp = true;
+		}
+        
 	}
 }
