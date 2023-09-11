@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float curTime = 0; // GameManager.cs
+    public int monsterAtk = 0; // MonsterInterface.Atk 
+
     void Start()
     {
+        Time.timeScale = 1.0f;
 		SetMonsterLocation();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        curTime += Time.deltaTime; // GameManager.cs
+		MonsterAtkUp();
 	}
 
     void SetMonsterLocation()
@@ -22,4 +26,12 @@ public class Monster : MonoBehaviour
 		float y = 4.4f;
 		transform.position = new Vector3(x, y, 0);
 	}
+
+    void MonsterAtkUp()
+    {
+        if(curTime > 30f)
+        {
+            monsterAtk += 1; // MonsterInterface.Atk
+		}
+    }
 }

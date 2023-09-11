@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -14,14 +15,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+ 
 	}
 
     void CloneMonster()
     {
 		Instantiate(monster);
-	}	
-
+	}
+    
     void SpawnMonster()
     {
 		InvokeRepeating("CloneMonster", 0.0f, 1.0f);
