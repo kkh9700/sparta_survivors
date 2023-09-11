@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainSceneUI : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     public GameObject scorePanel;
     public GameObject optionPanel;
