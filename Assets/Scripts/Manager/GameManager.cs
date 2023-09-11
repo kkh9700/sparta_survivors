@@ -7,16 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public GameObject monster;
     // Start is called before the first frame update
-    void Start()
-    {      
-		SpawnMonster();
-	}
-
-	// Update is called once per frame
-	void Update()
-    {
-		
-	}
 
     void CloneMonster()
     {
