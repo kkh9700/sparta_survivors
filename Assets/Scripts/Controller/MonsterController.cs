@@ -18,6 +18,7 @@ public class MonsterController : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         int n = GameManager.I.stage;
         monster = new Monster(1 * n, 1 * n, 3, 1, 1);
+        transform.SetAsFirstSibling();
     }
 
     void Start()

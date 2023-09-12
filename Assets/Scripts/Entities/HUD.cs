@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class HUDTest : MonoBehaviour
 {
-    public enum InfoType { Exp, Level, Score, Time, Health }
+    public enum InfoType { Exp, Level, Score, Time, Stage }
     public InfoType type;
 
     TMP_Text myText;
@@ -16,7 +16,8 @@ public class HUDTest : MonoBehaviour
     private void Awake()
     {
         myText = GetComponent<TMP_Text>();
-        mySlider = GetComponent<Slider>();
+        if (type == InfoType.Exp)
+            mySlider = GetComponent<Slider>();
     }
 
     private void LateUpdate()
@@ -32,7 +33,7 @@ public class HUDTest : MonoBehaviour
                 myText.text = string.Format("Lv.{0:F0}", GameManager.I.level);
                 break;
             case InfoType.Score:
-                myText.text = string.Format("Score : {0:F0}", GameManagerTest.instanceTest.score);
+                myText.text = string.Format("Score : {0:F0}", GameManager.I.score);
                 break;
             case InfoType.Time:
                 float remainTime = GameManager.I.maxGameTime - GameManager.I.gameTime;
@@ -40,10 +41,8 @@ public class HUDTest : MonoBehaviour
                 int sec = Mathf.FloorToInt(remainTime % 60);
                 myText.text = string.Format("{0:D2}:{1:D2}", min, sec);
                 break;
-            case InfoType.Health:
-                float curHealth = GameManagerTest.instanceTest.health;
-                float maxHealth = GameManagerTest.instanceTest.maxHealth;
-                mySlider.value = curHealth / maxHealth;
+            case InfoType.Stage:
+                myText.text = string.Format("Stage: {0:F0}", GameManager.I.stage);
                 break;
             default:
                 break;

@@ -6,7 +6,6 @@ public class WeaponController : MonoBehaviour
 {
     public int id;
     public int prefabId;
-    public float damage;
     public int count;
     public float freq;
     float timer;
@@ -19,7 +18,6 @@ public class WeaponController : MonoBehaviour
 
     private void Start()
     {
-        damage = player.GetAtk();
         freq = player.GetAtkSpeed();
     }
 
@@ -55,9 +53,8 @@ public class WeaponController : MonoBehaviour
         }
     }
 
-    public void LevelUp(float damage, int count) // ���� ������
+    public void LevelUp(int count) // ���� ������
     {
-        this.damage += damage;
         this.count += count;
 
     }
@@ -74,7 +71,6 @@ public class WeaponController : MonoBehaviour
         Transform bullet = PoolManager.I.Get(prefabId).transform;
         bullet.position = transform.position;
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-        bullet.GetComponent<BulletController>().Init(damage, count, dir);
-
+        bullet.GetComponent<BulletController>().Init(player.GetAtk(), count, dir);
     }
 }

@@ -47,8 +47,6 @@ public class GameManager : MonoBehaviour
 			gameTime = 0;
 			stage++;
 		}
-
-		stageTxt.text = stage.ToString();
 	}
 
 	public void OnPause()

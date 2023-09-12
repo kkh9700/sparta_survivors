@@ -70,4 +70,18 @@ public class SoundManager : MonoBehaviour
         }
         sfxPlayer.PlayOneShot(audioClipsDic[a_name], a_volume * masterVolumeSFX);
     }
+
+    #region 옵션에서 볼륨조절
+    public void SetVolumeSFX(float a_volume)
+    {
+        masterVolumeSFX = a_volume;
+    }
+
+    public void SetVolumeBGM(float a_volume)
+    {
+        masterVolumeBGM = a_volume;
+        bgmPlayer.volume = masterVolumeBGM;
+    }
+    #endregion
+
 }
