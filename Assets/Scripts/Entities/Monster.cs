@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Monster : ICharacter
 {
-    public int HP { get; set; }
-    public int Attack { get; set; }
+    public float HP { get; set; }
+    public float Attack { get; set; }
     public float Speed { get; set; }
     public float AtkSpeed { get; set; }
     public int Exp;
@@ -20,7 +20,7 @@ public class Monster : ICharacter
         Exp = exp;
         isDead = false;
     }
-    public void Damaged(int damage)
+    public void Damaged(float damage)
     {
         HP -= damage;
 

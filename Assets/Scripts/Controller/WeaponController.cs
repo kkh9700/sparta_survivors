@@ -2,29 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponControllerTest : MonoBehaviour
+public class WeaponController : MonoBehaviour
 {
     public int id;
     public int prefabId;
     public float damage;
     public int count;
     public float freq;
-
     float timer;
-    PlayerControllerTest player;
-    public PoolManagerTest pool;
+    PlayerController player;
 
     private void Awake()
     {
-        player = GetComponentInParent<PlayerControllerTest>();
-        
+        player = GetComponentInParent<PlayerController>();
     }
 
-    void Start()
+    private void Start()
     {
-        freq = 0.3f;
+        damage = player.GetAtk();
+        freq = player.GetAtkSpeed();
     }
-    // Update is called once per frame
+
     void Update()
     {
         switch (id)
@@ -42,13 +40,9 @@ public class WeaponControllerTest : MonoBehaviour
 
                 break;
         }
-        if (Input.GetButtonDown("Jump")) // ·¹º§¾÷ Å×½ºÆ®
-        {
-            LevelUp(2, 1);
-        }
 
     }
-        public void Init()
+    public void Init()
     {
         switch (id)
         {
@@ -61,7 +55,7 @@ public class WeaponControllerTest : MonoBehaviour
         }
     }
 
-    public void LevelUp(float damage, int count) // ¹«±â ·¹º§¾÷
+    public void LevelUp(float damage, int count) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         this.damage += damage;
         this.count += count;
@@ -70,21 +64,17 @@ public class WeaponControllerTest : MonoBehaviour
 
     void Fire()
     {
-        if (!player.scanner.nearestTarget)
+        if (!player._scanner.nearestTarget)
             return;
 
-        Vector3 targetPos = player.scanner.nearestTarget.position;
+        Vector3 targetPos = player._scanner.nearestTarget.position;
         Vector3 dir = targetPos - transform.position;
         dir = dir.normalized;
 
-        Transform bullet = GameManagerTest.instanceTest.pool.Get(prefabId).transform;
+        Transform bullet = PoolManager.I.Get(prefabId).transform;
         bullet.position = transform.position;
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-        bullet.GetComponent<BulletControllerTest>().Init(damage, count, dir);
+        bullet.GetComponent<BulletController>().Init(damage, count, dir);
 
     }
-
-
-
-    // Update is called once per frame
 }

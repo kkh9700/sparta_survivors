@@ -2,8 +2,8 @@ using TMPro;
 
 public class Player : ICharacter
 {
-    public int HP { get; set; }
-    public int Attack { get; set; }
+    public float HP { get; set; }
+    public float Attack { get; set; }
     public float Speed { get; set; }
     public float AtkSpeed { get; set; }
     public bool isDead { get; set; }
@@ -18,7 +18,7 @@ public class Player : ICharacter
         isDead = false;
     }
 
-    public void Damaged(int damage)
+    public void Damaged(float damage)
     {
         HP -= damage;
 

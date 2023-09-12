@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class HUDTest : MonoBehaviour
 {
-    public enum InfoType { Exp, Level, Score, Time, Health}
+    public enum InfoType { Exp, Level, Score, Time, Health }
     public InfoType type;
 
     TMP_Text myText;
@@ -21,21 +21,21 @@ public class HUDTest : MonoBehaviour
 
     private void LateUpdate()
     {
-        switch(type)
+        switch (type)
         {
             case InfoType.Exp:
-                float curExp = GameManagerTest.instanceTest.exp;
-                float maxExp = GameManagerTest.instanceTest.nextExp[GameManagerTest.instanceTest.level];
+                float curExp = GameManager.I.exp;
+                float maxExp = GameManager.I.nextExp[GameManager.I.level];
                 mySlider.value = curExp / maxExp;
                 break;
             case InfoType.Level:
-                myText.text = string.Format("Lv.{0:F0}", GameManagerTest.instanceTest.level);
+                myText.text = string.Format("Lv.{0:F0}", GameManager.I.level);
                 break;
             case InfoType.Score:
                 myText.text = string.Format("Score : {0:F0}", GameManagerTest.instanceTest.score);
                 break;
             case InfoType.Time:
-                float remainTime = GameManagerTest.instanceTest.maxGameTime - GameManagerTest.instanceTest.gameTime;
+                float remainTime = GameManager.I.maxGameTime - GameManager.I.gameTime;
                 int min = Mathf.FloorToInt(remainTime / 60);
                 int sec = Mathf.FloorToInt(remainTime % 60);
                 myText.text = string.Format("{0:D2}:{1:D2}", min, sec);
@@ -45,7 +45,7 @@ public class HUDTest : MonoBehaviour
                 float maxHealth = GameManagerTest.instanceTest.maxHealth;
                 mySlider.value = curHealth / maxHealth;
                 break;
-            default: 
+            default:
                 break;
         }
     }

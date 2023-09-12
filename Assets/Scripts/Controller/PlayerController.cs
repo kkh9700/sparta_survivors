@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image BulletTimeImg;
     [SerializeField] private Image DashImg;
     [SerializeField] private GameObject BulletTimeEffect;
+    public Scanner _scanner;
     private Camera _camera;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _renderer;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _camera = Camera.main;
+        _scanner = GetComponent<Scanner>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _renderer = GetComponentInChildren<SpriteRenderer>();
         player = new Player(maxHP, 1, 5, 1);
@@ -142,5 +144,15 @@ public class PlayerController : MonoBehaviour
                 HPImg.fillAmount = player.HP / (float)maxHP;
             }
         }
+    }
+
+    public float GetAtk()
+    {
+        return player.Attack;
+    }
+
+    public float GetAtkSpeed()
+    {
+        return player.AtkSpeed;
     }
 }

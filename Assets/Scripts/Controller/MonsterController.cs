@@ -10,29 +10,29 @@ public class MonsterController : MonoBehaviour
     private ICharacter monster;
     private float curTime = 0;
     private bool stageUp = false;
+    private GameObject player;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _renderer = GetComponent<SpriteRenderer>();
-        monster = new Monster(2, 1, 3, 1, 1);
+        player = GameObject.FindWithTag("Player");
+        int n = GameManager.I.stage;
+        monster = new Monster(1 * n, 1 * n, 3, 1, 1);
     }
 
-	 void Start()
-	{
-        SetMonsterLocation();
-	}
-	void Update()
+    void Start()
     {
-		curTime += Time.deltaTime;
-        MonsterAtkUp();
-		SetDirection();
+        SetMonsterLocation();
+    }
+    void Update()
+    {
+        SetDirection();
         ApplyMovment(_movementDirection);
         Rotate(_movementDirection);
     }
 
     private void SetDirection()
     {
-        GameObject player = GameObject.FindWithTag("Player");
         float x = player.transform.position.x - transform.position.x;
         float y = player.transform.position.y - transform.position.y;
         _movementDirection = new Vector2(x, y).normalized;
@@ -51,24 +51,30 @@ public class MonsterController : MonoBehaviour
             _renderer.flipX = direction.x < 0;
     }
 
-    public int GetAttack()
+    public void SetMonsterLocation()
+    {
+        float x = Random.Range(-8.3f, 8.3f) + player.transform.position.x;
+        float y = 4.4f + player.transform.position.y;
+        transform.position = new Vector3(x, y, 0);
+    }
+
+    public float GetAttack()
     {
         return monster.Attack;
     }
 
-	public void SetMonsterLocation()
-	{
-		float x = Random.Range(-8.3f, 8.3f);
-		float y = 4.4f;
-		transform.position = new Vector3(x, y, 0);
-	}
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("충돌");
+        if (!collision.CompareTag("Bullet"))     //if (!collision.CompareTag("Enemy") || per == -1)
+            return;
 
-	void MonsterAtkUp()
-	{
-        if (curTime > 30f && !stageUp)
+        monster.HP -= collision.GetComponent<BulletController>().damage;
+
+        if (monster.HP <= 0)
         {
-			monster.Attack += 1;
-            stageUp = true;
-		}     
-	}
+            GameManager.I.AddExp(((Monster)monster).Exp);
+            Destroy(gameObject);
+        }
+    }
 }

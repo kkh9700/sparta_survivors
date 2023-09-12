@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScannerTest : MonoBehaviour
+public class Scanner : MonoBehaviour
 {
     public float scanRange;
     public LayerMask targetLayer;
@@ -12,27 +12,27 @@ public class ScannerTest : MonoBehaviour
 
     private void FixedUpdate()
     {
-        targets = Physics2D.CircleCastAll(transform.position, scanRange, Vector2.zero, 0, targetLayer); // CircleCastAllÀº ¿øÇüÀ¸·Î Ray¸¦ ½î°í ¸ÂÀº targetLayer(LayerMask)¸¦ ¸ðµÎ ¹ÝÈ¯
+        targets = Physics2D.CircleCastAll(transform.position, scanRange, Vector2.zero, 0, targetLayer); // CircleCastAllï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Rayï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ targetLayer(LayerMask)ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
         nearestTarget = GetNearest();
-        
+
 
     }
 
-    Transform GetNearest() // °¡Àå °¡±î¿î targetÀÇ À§Ä¡¸¦ ¸®ÅÏ
+    Transform GetNearest() // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ targetï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
         Transform result = null;
         float diff = 100;
 
-        foreach(RaycastHit2D target in targets)
+        foreach (RaycastHit2D target in targets)
         {
             Vector3 myPos = transform.position;
             Vector3 targetPos = target.transform.position;
             float curDiff = Vector3.Distance(myPos, targetPos);
 
-            if(curDiff < diff)
+            if (curDiff < diff)
             {
                 diff = curDiff;
-                result = target.transform; 
+                result = target.transform;
             }
         }
 

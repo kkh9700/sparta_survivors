@@ -2,14 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolManagerTest : MonoBehaviour
+public class PoolManager : MonoBehaviour
 {
-    public GameObject[] prefabs; // ÇÁ¸®ÆÕµéÀ» º¸°üÇÒ º¯¼ö
-    List<GameObject>[] pools; // Ç® ´ã´çÇÏ´Â ¸®½ºÆ®
-    public static PoolManagerTest pool;
+    public GameObject[] prefabs; // ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    List<GameObject>[] pools; // Ç® ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
+    public static PoolManager I;
 
     private void Awake()
     {
+        if (I == null)
+        {
+            I = this;
+        }
+        else if (I != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+
 
         pools = new List<GameObject>[prefabs.Length];
 
@@ -21,7 +32,7 @@ public class PoolManagerTest : MonoBehaviour
 
     public GameObject Get(int index)
     {
-        GameObject select = null; // ¼±ÅÃÇÑ Ç®ÀÇ ³î°íÀÖ´Â(ºñÈ°¼ºÈ­ µÈ) °ÔÀÓ ¿ÀºêÁ§Æ®¿¡ Á¢±Ù
+        GameObject select = null; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½(ï¿½ï¿½È°ï¿½ï¿½È­ ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         foreach (GameObject item in pools[index])
         {
