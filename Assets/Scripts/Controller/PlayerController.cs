@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Camera _camera;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _renderer;
+    private Animator _animator;
     private Vector2 _movementDirection = Vector2.zero;
     private Player player;
     private float speed;
@@ -22,12 +23,14 @@ public class PlayerController : MonoBehaviour
     private float DashCoolTime = 2;
     private float DamagedDelay = 0;
 
+
     private void Awake()
     {
         _camera = Camera.main;
         _scanner = GetComponent<Scanner>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _renderer = GetComponentInChildren<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
         player = new Player(maxHP, 1, 5, 1);
         speed = player.Speed;
     }
@@ -59,6 +62,8 @@ public class PlayerController : MonoBehaviour
 
         BulletTimeImg.fillAmount = BTGauge / 5f;
         DashImg.fillAmount = DashCoolTime / 2f;
+
+        _animator.SetFloat("PlayerSpeed", _movementDirection.magnitude);
     }
 
     private void FixedUpdate()
