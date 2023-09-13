@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2626844638097353773}
   - component: {fileID: 8030412577051379355}
   - component: {fileID: 2695455164069287289}
-  - component: {fileID: 1736581148380031772}
+  - component: {fileID: 1449368582442117476}
   m_Layer: 6
   m_Name: Stage2Monster
   m_TagString: Monster
@@ -30,11 +30,11 @@ Transform:
   m_GameObject: {fileID: 723399040662418664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: 3, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2360321000176667862
 SpriteRenderer:
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6e4460827a2fe4f43b83b4c9c55ec1dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae44d6ca9dc728943a492226b377d3f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -159,10 +159,10 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05}
-  m_Size: {x: 0.16, y: 0.25}
+  m_Offset: {x: -0.19, y: -0.17}
+  m_Size: {x: 0.15, y: 0.54}
   m_Direction: 0
---- !u!95 &1736581148380031772
+--- !u!95 &1449368582442117476
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ Animator:
   m_GameObject: {fileID: 723399040662418664}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 035208e383ba86049bd1b92726169370, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6e46e3ac62c0ad04ea9ca9ca41e4172e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

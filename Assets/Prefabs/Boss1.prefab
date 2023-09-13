@@ -13,14 +13,14 @@ GameObject:
   - component: {fileID: 2591933734906476828}
   - component: {fileID: 1908039311121386604}
   - component: {fileID: 6927402561352782340}
-  - component: {fileID: 5698066620178986214}
+  - component: {fileID: 3642204689717647627}
   m_Layer: 6
   m_Name: Boss1
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6559854178119703414
 Transform:
   m_ObjectHideFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6e4460827a2fe4f43b83b4c9c55ec1dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af16cb225967af543b9c764da4690c2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -159,10 +159,10 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05}
-  m_Size: {x: 0.16, y: 0.25}
+  m_Offset: {x: -0.18, y: -0.17}
+  m_Size: {x: 0.16, y: 0.52}
   m_Direction: 0
---- !u!95 &5698066620178986214
+--- !u!95 &3642204689717647627
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ Animator:
   m_GameObject: {fileID: 5121037986371426702}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 035208e383ba86049bd1b92726169370, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8647f54891c85bd47926489b3306947e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
