@@ -8373,8 +8373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d6606982b61354d99eaa4ac53b6182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorePanel: {fileID: 1524605049}
-  optionPanel: {fileID: 1465810988}
 --- !u!4 &1392343976
 Transform:
   m_ObjectHideFlags: 0

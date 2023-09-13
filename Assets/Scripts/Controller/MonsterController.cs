@@ -11,6 +11,8 @@ public class MonsterController : MonoBehaviour
     private float curTime = 0;
     private bool stageUp = false;
     private GameObject player;
+    [SerializeField]
+    public ItemDropTable itemDropTable;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -66,7 +68,6 @@ public class MonsterController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("충돌");
         if (!collision.CompareTag("Bullet"))     //if (!collision.CompareTag("Enemy") || per == -1)
             return;
 
@@ -74,7 +75,7 @@ public class MonsterController : MonoBehaviour
 
         if (monster.HP <= 0)
         {
-            GameManager.I.AddExp(((Monster)monster).Exp);
+            itemDropTable.ItemDrop(transform.position, ((Monster)monster).Exp);
             Destroy(gameObject);
         }
     }

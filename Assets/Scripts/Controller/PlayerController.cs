@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
         _scanner = GetComponent<Scanner>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _renderer = GetComponentInChildren<SpriteRenderer>();
-        player = new Player(maxHP, 1, 5, 1);
+        player = new Player(maxHP, 1, 5, .3f);
         speed = player.Speed;
     }
 
@@ -159,5 +160,21 @@ public class PlayerController : MonoBehaviour
     public void SetSpeed(float n)
     {
         speed *= n;
+
+        StartCoroutine(RestoreSpeed(n));
+    }
+
+    IEnumerator RestoreSpeed(float n)
+    {
+        yield return new WaitForSeconds(3f);
+        speed /= n;
+    }
+
+    public void RecoveryHp(float n)
+    {
+        player.HP += maxHP * n;
+
+        if (player.HP < maxHP)
+            player.HP = maxHP;
     }
 }

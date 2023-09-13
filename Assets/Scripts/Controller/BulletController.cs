@@ -14,7 +14,6 @@ public class BulletController : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("aa");
         rigid = GetComponent<Rigidbody2D>();
     }
 
@@ -30,8 +29,6 @@ public class BulletController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("충돌");
-
         if (!collision.CompareTag("Monster"))     //if (!collision.CompareTag("Enemy") || per == -1)
             return;
 
