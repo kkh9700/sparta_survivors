@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-	public GameObject monster;
+	public GameObject[] monster;
 	public GameObject pausePanel;
 	public float gameTime;
 	public float maxGameTime = 10f;
@@ -66,8 +66,7 @@ public class GameManager : MonoBehaviour
 
 	void CloneMonster()
 	{
-
-		Instantiate(monster);
+		Instantiate(monster[stage - 1]);
 	}
 
 	void SpawnMonster()
