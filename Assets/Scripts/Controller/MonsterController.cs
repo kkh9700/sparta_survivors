@@ -17,7 +17,7 @@ public class MonsterController : MonoBehaviour
         _renderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindWithTag("Player");
         int n = GameManager.I.stage;
-        monster = new Monster(1 * n, 1 * n, 3, 1, 1);
+        monster = new Monster(1 * n, 1 * n, 3 + (0.2f * n), 1, 1);
         transform.SetAsFirstSibling();
     }
 
@@ -41,7 +41,7 @@ public class MonsterController : MonoBehaviour
 
     private void ApplyMovment(Vector2 direction)
     {
-        direction = direction * 3;
+        direction = direction * monster.Speed;
 
         _rigidbody.velocity = direction;
     }
