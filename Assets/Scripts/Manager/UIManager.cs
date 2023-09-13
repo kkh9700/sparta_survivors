@@ -7,13 +7,21 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject scorePanel;
-    public GameObject optionPanel;
+    public static UIManager I;
 
     private void Awake()
     {
-        scorePanel.SetActive(false);
-        optionPanel.SetActive(false);
+        if (I == null)
+        {
+            I = this;
+        }
+        else if (I != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+
         Screen.fullScreen = true;
     }
 
