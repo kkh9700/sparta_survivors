@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 	public int level = 0;
 	public int score;
 	public TMP_Text stageTxt;
-
+	private bool BossChk = false;
 	public static GameManager I;
 
 	void Awake()
@@ -66,7 +66,18 @@ public class GameManager : MonoBehaviour
 
 	void CloneMonster()
 	{
-		Instantiate(monster[stage - 1]);
+		if (stage % 4 != 0)
+		{
+			Instantiate(monster[(stage - 1) % 4]);
+			BossChk = false;
+		}
+
+		if (stage % 4 == 0 && !BossChk)
+		{
+			Instantiate(monster[3]);
+			BossChk = true;
+		}
+		
 	}
 
 	void SpawnMonster()

@@ -17,7 +17,7 @@ public class MonsterController : MonoBehaviour
         _renderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindWithTag("Player");
         int n = GameManager.I.stage;
-        monster = new Monster(1 * n, 1 * n, 3 + (1.02f * n), 1, 1);
+        monster = new Monster(1 * n, 1 * n, 3 + (0.2f * n), 1, 1);
         transform.SetAsFirstSibling();
     }
 
