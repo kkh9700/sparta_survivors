@@ -8,8 +8,6 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager I;
-    public GameObject scorePanel;
-    public GameObject optionPanel;
 
     private void Awake()
     {
@@ -24,8 +22,6 @@ public class UIManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        scorePanel.SetActive(false);
-        optionPanel.SetActive(false);
         Screen.fullScreen = true;
     }
 
