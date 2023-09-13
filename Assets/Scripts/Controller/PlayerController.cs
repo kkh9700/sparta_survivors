@@ -155,4 +155,9 @@ public class PlayerController : MonoBehaviour
     {
         return player.AtkSpeed;
     }
+
+    public void SetSpeed(float n)
+    {
+        speed *= n;
+    }
 }

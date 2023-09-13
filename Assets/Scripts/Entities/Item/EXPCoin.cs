@@ -12,8 +12,7 @@ public class EXPCoin : Item
     {
         GameObject playerObject = GameObject.Find("Player");
         GameManager gameManager = playerObject.GetComponent<GameManager>();
-        gameManager.
-        DestroyObject();
+        Destroy(gameObject);
     }
     public void DestroyObject()
     {
