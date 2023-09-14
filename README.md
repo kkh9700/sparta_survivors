@@ -16,7 +16,7 @@ URL : [09 - 구구덕 (notion.site)](https://teamsparta.notion.site/09-6e10d82f2
 - 김경환 -
 - 이민열 -
 - 김하늘 -
-- 우성훈 -
+- 우성훈 - 아이템 기능 구현(스피드 증가, EXP, HP회복), 아이템 드랍테이블
 
 
 ### :hammer: 개발 환경 
