@@ -54,7 +54,7 @@ URL : [09 - 구구덕 (notion.site)](https://teamsparta.notion.site/09-6e10d82f2
 #### 플레이어
 - 자동공격 
 - 대쉬 <Space Bar 버튼>
-- Time Bullet (시간이 느려지는 기능) <Shift 버튼>
+- Bullet Time (시간이 느려지는 기능) <Shift 버튼>
 
 #### 몬스터
 경험치와 아이템을 드랍합니다. 
