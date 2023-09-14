@@ -73,7 +73,7 @@ URL : [09 - 구구덕 (notion.site)](https://teamsparta.notion.site/09-6e10d82f2
 
 ![게임 영상](https://github.com/kkh9700/sparta_survivors/assets/70570791/c0f46acd-6b24-4484-9085-4c8392909212)
 
-## :redsquare: 구현하지 못한 부분
+## 🟥 구현하지 못한 부분
 
 ## :sob: 어려웠던 점
 
