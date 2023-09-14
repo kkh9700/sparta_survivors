@@ -73,6 +73,8 @@ URL : [09 - 구구덕 (notion.site)](https://teamsparta.notion.site/09-6e10d82f2
 
 ![게임 영상](https://github.com/kkh9700/sparta_survivors/assets/70570791/c0f46acd-6b24-4484-9085-4c8392909212)
 
+## :redsquare: 구현하지 못한 부분
+
 ## :sob: 어려웠던 점
 
 - 강성호 - 몬스터의 스텟 벨런스 조정, 애니메이션의 다양성 구현 (몬스터 죽었을 때, 플레이어에게 닿았을 때), 몬스터의 스킬 구현, 팀원이 제작한 코드를 완벽히 이해하고 알맞게 수정하기, 적절한 에셋 구하기
