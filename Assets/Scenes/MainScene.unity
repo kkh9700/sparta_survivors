@@ -1144,13 +1144,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612588482}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 156858619}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &612588484
 MonoBehaviour:
@@ -2341,7 +2341,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGMClip: {fileID: 8300000, guid: d54b1db0890ab2147bc4283d5011b6d5, type: 3}
-  audioClip: []
+  audioClip:
+  - {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+  - {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
   masterVolumeSFX: 1
   masterVolumeBGM: 1
 --- !u!82 &1821466864

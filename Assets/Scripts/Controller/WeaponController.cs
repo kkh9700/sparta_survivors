@@ -64,6 +64,8 @@ public class WeaponController : MonoBehaviour
         if (!player._scanner.nearestTarget)
             return;
 
+        SoundManager.I.PlaySound("Spear", .5f);
+
         Vector3 targetPos = player._scanner.nearestTarget.position;
         Vector3 dir = targetPos - transform.position;
         dir = dir.normalized;
