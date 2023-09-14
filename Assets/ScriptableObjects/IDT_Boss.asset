@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e31d56a9453adf4f989c5014c3d2126, type: 3}
-  m_Name: IDT_Monster
+  m_Name: IDT_Boss
   m_EditorClassIdentifier: 
   items:
   - item: {fileID: 7180051763759486310, guid: 62a18bc219834ed438a64e503232122c, type: 3}
-    weight: 9
+    weight: 5
+  - item: {fileID: 5546439317036782256, guid: 69e0b728261a0844a9e12f87fe9ba12b, type: 3}
+    weight: 4
   - item: {fileID: 4651351570932020818, guid: cc44b262f9c552c4aa9509936d825d08, type: 3}
     weight: 1
-  - item: {fileID: 7180051763759486310, guid: 62a18bc219834ed438a64e503232122c, type: 3}
-    weight: 0
-  - item: {fileID: 7180051763759486310, guid: 62a18bc219834ed438a64e503232122c, type: 3}
-    weight: 0
