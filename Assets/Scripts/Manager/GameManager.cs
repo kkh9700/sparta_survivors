@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-	public GameObject monster;
+	public GameObject[] monster;
 	public GameObject pausePanel;
 	public float gameTime;
 	public float maxGameTime = 10f;
@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 	public int level = 0;
 	public int score;
 	public TMP_Text stageTxt;
-
+	private bool BossChk = false;
 	public static GameManager I;
 
 	void Awake()
@@ -66,8 +66,18 @@ public class GameManager : MonoBehaviour
 
 	void CloneMonster()
 	{
+		if (stage % 4 != 0)
+		{
+			Instantiate(monster[(stage - 1) % 4]);
+			BossChk = false;
+		}
 
-		Instantiate(monster);
+		if (stage % 4 == 0 && !BossChk)
+		{
+			Instantiate(monster[3]);
+			BossChk = true;
+		}
+		
 	}
 
 	void SpawnMonster()

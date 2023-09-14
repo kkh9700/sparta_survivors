@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e31d56a9453adf4f989c5014c3d2126, type: 3}
+  m_Name: IDT_Monster
+  m_EditorClassIdentifier: 
+  items:
+  - item: {fileID: 7180051763759486310, guid: 62a18bc219834ed438a64e503232122c, type: 3}
+    weight: 9
+  - item: {fileID: 4651351570932020818, guid: cc44b262f9c552c4aa9509936d825d08, type: 3}
+    weight: 1
+  - item: {fileID: 7180051763759486310, guid: 62a18bc219834ed438a64e503232122c, type: 3}
+    weight: 0
+  - item: {fileID: 7180051763759486310, guid: 62a18bc219834ed438a64e503232122c, type: 3}
+    weight: 0

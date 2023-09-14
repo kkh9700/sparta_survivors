@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
-    private static SoundManager I;
+    public static SoundManager I;
 
     [SerializeField] AudioClip BGMClip; // 오디오 소스들 지정.
     [SerializeField] AudioClip[] audioClip; // 오디오 소스들 지정.
@@ -61,7 +61,12 @@ public class SoundManager : MonoBehaviour
             bgmPlayer.Play();
     }
 
-    public void PlaySound(string a_name, float a_volume = 1f)
+    public void PlaySound(string a_name)
+    {
+        PlaySound(a_name, 1);
+    }
+
+    public void PlaySound(string a_name, float a_volume)
     {
         if (audioClipsDic.ContainsKey(a_name) == false)
         {
