@@ -2340,7 +2340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdbcd356517c9a542ac0d10f5a7df5c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGMClip: {fileID: 8300000, guid: d54b1db0890ab2147bc4283d5011b6d5, type: 3}
+  BGMClip: {fileID: 8300000, guid: 19f1d3d91c71d00449e5a17c12cdb748, type: 3}
   audioClip:
   - {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
   - {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
