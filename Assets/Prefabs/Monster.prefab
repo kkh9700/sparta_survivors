@@ -30,11 +30,11 @@ Transform:
   m_GameObject: {fileID: 1195133161944162482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: 3, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 5, y: 4.9999995, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4205935092119296140
 SpriteRenderer:
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857c52e4516553844af28edd492f809c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemDropTable: {fileID: 11400000, guid: 7d25f1363672e514ca58dcbef74919a7, type: 2}
 --- !u!50 &8497783895537226433
 Rigidbody2D:
   serializedVersion: 4
@@ -183,7 +184,7 @@ BoxCollider2D:
   m_Offset: {x: -0.05, y: -0.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.08}
     oldSize: {x: 1.28, y: 0.96}
     newSize: {x: 0.16, y: 0.28}
     adaptiveTilingThreshold: 0.5

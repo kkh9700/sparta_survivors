@@ -11,6 +11,7 @@ public class MonsterController : MonoBehaviour
     private float curTime = 0;
     private bool stageUp = false;
     private GameObject player;
+    [SerializeField] private ItemDropTable itemDropTable;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -74,7 +75,7 @@ public class MonsterController : MonoBehaviour
 
         if (monster.HP <= 0)
         {
-            GameManager.I.AddExp(((Monster)monster).Exp);
+            itemDropTable.ItemDrop(transform.position, ((Monster)monster).Exp);
             Destroy(gameObject);
         }
     }
